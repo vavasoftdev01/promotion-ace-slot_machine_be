@@ -24,9 +24,11 @@ export default class SampleController {
     return user
   }
 
-  async getOngoingEvent({ request }: HttpContext) {
+  async getOngoingEvent({ request, authUser }: HttpContext) {
     
     const e_ = await EventConfiguration.all()
+
+    console.table(authUser)
 
     return e_
   }

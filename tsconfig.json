@@ -4,5 +4,9 @@
     "rootDir": "./",
     "jsx": "react",
     "outDir": "./build"
-  }
+  },
+  // 👇 Add this section to include the new type definitions
+  "files": [
+    "./app/types/http.ts"
+  ]
 }
