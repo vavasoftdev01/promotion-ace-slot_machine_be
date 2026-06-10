@@ -39,12 +39,12 @@ export class EventsConfigurationSchema extends BaseModel {
   declare createdAt: DateTime | null
   @column()
   declare eventDescription: string
-  @column.dateTime()
-  declare eventEndTime: DateTime
+  @column()
+  declare eventEndTime: string
   @column()
   declare eventName: string
-  @column.dateTime()
-  declare eventStartTime: DateTime
+  @column()
+  declare eventStartTime: string
   @column({ isPrimary: true })
   declare id: number
   @column()

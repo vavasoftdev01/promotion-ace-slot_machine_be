@@ -36,12 +36,18 @@ router
   })
   .prefix('/api/v1')
 
-router.get('/api/spin', [controllers.SlotMachine, 'spin'])
-router.get('/api/minigame', [controllers.SlotMachine, 'minigame'])
-router.post('/api/config/jackpot', [controllers.SlotMachine, 'configJackpot'])
 
-router.get('/api/sample/balance', [controllers.Sample, 'balance'])
+// router.get('/api/sample/balance', [controllers.Sample, 'balance'])
 
 router.group(() => {
- router.get('/api/sample/ongoing-event', [controllers.Sample, 'getOngoingEvent'])
-}).use(middleware.mikroservice()) 
+  router.get('spin', [controllers.SlotMachine, 'spin'])
+  router.get('checkAuth', [controllers.SlotMachine, 'getAuthUser'])
+  router.get('ongoing-event', [controllers.EventConfigs, 'getOngoingEvent'])
+  router.post('create-event', [controllers.EventConfigs, 'createEvent'])
+
+  // Testing routes
+  router.get('minigame', [controllers.SlotMachine, 'minigame'])
+  router.post('config/jackpot', [controllers.SlotMachine, 'configJackpot'])
+})
+.prefix('/promotion-ace/v1')
+.use(middleware.mikroservice()) 

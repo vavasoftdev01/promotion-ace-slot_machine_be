@@ -9,4 +9,5 @@ export const controllers = {
   Profile: () => import('#controllers/profile_controller'),
   Sample: () => import('#controllers/sample_controller'),
   SlotMachine: () => import('#controllers/slot_machine_controller'),
+  EventConfigs: () => import('#controllers/event_configs_controller'),
 }

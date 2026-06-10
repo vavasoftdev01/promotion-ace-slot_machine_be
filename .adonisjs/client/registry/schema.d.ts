@@ -57,7 +57,7 @@ export interface Registry {
   }
   'slot_machine.spin': {
     methods: ["GET","HEAD"]
-    pattern: '/api/spin'
+    pattern: '/promotion-ace/v1/spin'
     types: {
       body: {}
       paramsTuple: []
@@ -67,9 +67,45 @@ export interface Registry {
       errorResponse: ExtractErrorResponse<Awaited<ReturnType<import('#controllers/slot_machine_controller').default['spin']>>>
     }
   }
+  'slot_machine.get_auth_user': {
+    methods: ["GET","HEAD"]
+    pattern: '/promotion-ace/v1/checkAuth'
+    types: {
+      body: {}
+      paramsTuple: []
+      params: {}
+      query: {}
+      response: ExtractResponse<Awaited<ReturnType<import('#controllers/slot_machine_controller').default['getAuthUser']>>>
+      errorResponse: ExtractErrorResponse<Awaited<ReturnType<import('#controllers/slot_machine_controller').default['getAuthUser']>>>
+    }
+  }
+  'event_configs.get_ongoing_event': {
+    methods: ["GET","HEAD"]
+    pattern: '/promotion-ace/v1/ongoing-event'
+    types: {
+      body: {}
+      paramsTuple: []
+      params: {}
+      query: {}
+      response: ExtractResponse<Awaited<ReturnType<import('#controllers/event_configs_controller').default['getOngoingEvent']>>>
+      errorResponse: ExtractErrorResponse<Awaited<ReturnType<import('#controllers/event_configs_controller').default['getOngoingEvent']>>>
+    }
+  }
+  'event_configs.create_event': {
+    methods: ["POST"]
+    pattern: '/promotion-ace/v1/create-event'
+    types: {
+      body: {}
+      paramsTuple: []
+      params: {}
+      query: {}
+      response: ExtractResponse<Awaited<ReturnType<import('#controllers/event_configs_controller').default['createEvent']>>>
+      errorResponse: ExtractErrorResponse<Awaited<ReturnType<import('#controllers/event_configs_controller').default['createEvent']>>>
+    }
+  }
   'slot_machine.minigame': {
     methods: ["GET","HEAD"]
-    pattern: '/api/minigame'
+    pattern: '/promotion-ace/v1/minigame'
     types: {
       body: {}
       paramsTuple: []
@@ -81,7 +117,7 @@ export interface Registry {
   }
   'slot_machine.config_jackpot': {
     methods: ["POST"]
-    pattern: '/api/config/jackpot'
+    pattern: '/promotion-ace/v1/config/jackpot'
     types: {
       body: {}
       paramsTuple: []
@@ -89,30 +125,6 @@ export interface Registry {
       query: {}
       response: ExtractResponse<Awaited<ReturnType<import('#controllers/slot_machine_controller').default['configJackpot']>>>
       errorResponse: ExtractErrorResponse<Awaited<ReturnType<import('#controllers/slot_machine_controller').default['configJackpot']>>>
-    }
-  }
-  'sample.balance': {
-    methods: ["GET","HEAD"]
-    pattern: '/api/sample/balance'
-    types: {
-      body: {}
-      paramsTuple: []
-      params: {}
-      query: {}
-      response: ExtractResponse<Awaited<ReturnType<import('#controllers/sample_controller').default['balance']>>>
-      errorResponse: ExtractErrorResponse<Awaited<ReturnType<import('#controllers/sample_controller').default['balance']>>>
-    }
-  }
-  'sample.get_ongoing_event': {
-    methods: ["GET","HEAD"]
-    pattern: '/api/sample/ongoing-event'
-    types: {
-      body: {}
-      paramsTuple: []
-      params: {}
-      query: {}
-      response: ExtractResponse<Awaited<ReturnType<import('#controllers/sample_controller').default['getOngoingEvent']>>>
-      errorResponse: ExtractErrorResponse<Awaited<ReturnType<import('#controllers/sample_controller').default['getOngoingEvent']>>>
     }
   }
 }

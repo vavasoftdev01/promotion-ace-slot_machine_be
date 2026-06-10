@@ -32,33 +32,39 @@ const routes = {
   },
   'slot_machine.spin': {
     methods: ["GET","HEAD"],
-    pattern: '/api/spin',
-    tokens: [{"old":"/api/spin","type":0,"val":"api","end":""},{"old":"/api/spin","type":0,"val":"spin","end":""}],
+    pattern: '/promotion-ace/v1/spin',
+    tokens: [{"old":"/promotion-ace/v1/spin","type":0,"val":"promotion-ace","end":""},{"old":"/promotion-ace/v1/spin","type":0,"val":"v1","end":""},{"old":"/promotion-ace/v1/spin","type":0,"val":"spin","end":""}],
     types: placeholder as Registry['slot_machine.spin']['types'],
+  },
+  'slot_machine.get_auth_user': {
+    methods: ["GET","HEAD"],
+    pattern: '/promotion-ace/v1/checkAuth',
+    tokens: [{"old":"/promotion-ace/v1/checkAuth","type":0,"val":"promotion-ace","end":""},{"old":"/promotion-ace/v1/checkAuth","type":0,"val":"v1","end":""},{"old":"/promotion-ace/v1/checkAuth","type":0,"val":"checkAuth","end":""}],
+    types: placeholder as Registry['slot_machine.get_auth_user']['types'],
+  },
+  'event_configs.get_ongoing_event': {
+    methods: ["GET","HEAD"],
+    pattern: '/promotion-ace/v1/ongoing-event',
+    tokens: [{"old":"/promotion-ace/v1/ongoing-event","type":0,"val":"promotion-ace","end":""},{"old":"/promotion-ace/v1/ongoing-event","type":0,"val":"v1","end":""},{"old":"/promotion-ace/v1/ongoing-event","type":0,"val":"ongoing-event","end":""}],
+    types: placeholder as Registry['event_configs.get_ongoing_event']['types'],
+  },
+  'event_configs.create_event': {
+    methods: ["POST"],
+    pattern: '/promotion-ace/v1/create-event',
+    tokens: [{"old":"/promotion-ace/v1/create-event","type":0,"val":"promotion-ace","end":""},{"old":"/promotion-ace/v1/create-event","type":0,"val":"v1","end":""},{"old":"/promotion-ace/v1/create-event","type":0,"val":"create-event","end":""}],
+    types: placeholder as Registry['event_configs.create_event']['types'],
   },
   'slot_machine.minigame': {
     methods: ["GET","HEAD"],
-    pattern: '/api/minigame',
-    tokens: [{"old":"/api/minigame","type":0,"val":"api","end":""},{"old":"/api/minigame","type":0,"val":"minigame","end":""}],
+    pattern: '/promotion-ace/v1/minigame',
+    tokens: [{"old":"/promotion-ace/v1/minigame","type":0,"val":"promotion-ace","end":""},{"old":"/promotion-ace/v1/minigame","type":0,"val":"v1","end":""},{"old":"/promotion-ace/v1/minigame","type":0,"val":"minigame","end":""}],
     types: placeholder as Registry['slot_machine.minigame']['types'],
   },
   'slot_machine.config_jackpot': {
     methods: ["POST"],
-    pattern: '/api/config/jackpot',
-    tokens: [{"old":"/api/config/jackpot","type":0,"val":"api","end":""},{"old":"/api/config/jackpot","type":0,"val":"config","end":""},{"old":"/api/config/jackpot","type":0,"val":"jackpot","end":""}],
+    pattern: '/promotion-ace/v1/config/jackpot',
+    tokens: [{"old":"/promotion-ace/v1/config/jackpot","type":0,"val":"promotion-ace","end":""},{"old":"/promotion-ace/v1/config/jackpot","type":0,"val":"v1","end":""},{"old":"/promotion-ace/v1/config/jackpot","type":0,"val":"config","end":""},{"old":"/promotion-ace/v1/config/jackpot","type":0,"val":"jackpot","end":""}],
     types: placeholder as Registry['slot_machine.config_jackpot']['types'],
-  },
-  'sample.balance': {
-    methods: ["GET","HEAD"],
-    pattern: '/api/sample/balance',
-    tokens: [{"old":"/api/sample/balance","type":0,"val":"api","end":""},{"old":"/api/sample/balance","type":0,"val":"sample","end":""},{"old":"/api/sample/balance","type":0,"val":"balance","end":""}],
-    types: placeholder as Registry['sample.balance']['types'],
-  },
-  'sample.get_ongoing_event': {
-    methods: ["GET","HEAD"],
-    pattern: '/api/sample/ongoing-event',
-    tokens: [{"old":"/api/sample/ongoing-event","type":0,"val":"api","end":""},{"old":"/api/sample/ongoing-event","type":0,"val":"sample","end":""},{"old":"/api/sample/ongoing-event","type":0,"val":"ongoing-event","end":""}],
-    types: placeholder as Registry['sample.get_ongoing_event']['types'],
   },
 } as const satisfies Record<string, AdonisEndpoint>
 

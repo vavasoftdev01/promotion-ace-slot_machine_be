@@ -20,11 +20,12 @@ export interface ApiDefinition {
   }
   slotMachine: {
     spin: typeof routes['slot_machine.spin']
+    getAuthUser: typeof routes['slot_machine.get_auth_user']
     minigame: typeof routes['slot_machine.minigame']
     configJackpot: typeof routes['slot_machine.config_jackpot']
   }
-  sample: {
-    balance: typeof routes['sample.balance']
-    getOngoingEvent: typeof routes['sample.get_ongoing_event']
+  eventConfigs: {
+    getOngoingEvent: typeof routes['event_configs.get_ongoing_event']
+    createEvent: typeof routes['event_configs.create_event']
   }
 }

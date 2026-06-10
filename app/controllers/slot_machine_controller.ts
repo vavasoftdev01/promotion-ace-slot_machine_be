@@ -1,5 +1,7 @@
 import { randomInt } from 'node:crypto'
 import type { HttpContext } from '@adonisjs/core/http'
+import EventConfiguration from '#models/event_configuration'
+import collect from 'collect.js'
 
 const COMMON_SYMBOLS = ['cherry','cherry','cherry','cherry','lemon','lemon','orange','seven','star','grape','watermelon','diamond']
 const JACKPOT_LETTERS = ['K','B','C','G','A','M','E']
@@ -172,6 +174,18 @@ function doSpin(forceJackpot: boolean) {
 }
 
 export default class SlotMachineController {
+
+  async getOngoingEvent({}: HttpContext) {
+    const e_ = await EventConfiguration.query().where('isActive', true).first();
+    return {
+      events: e_,
+    }
+  }
+
+  async getAuthUser({ authUser }: HttpContext) {
+    return collect(authUser).only(['success','uidx', 'nick', 'balance', 'credit']).all()
+  }
+
   spin({ request }: HttpContext) {
     const forceJackpot = request.input('forceJackpot') === 'true'
     return doSpin(forceJackpot)
