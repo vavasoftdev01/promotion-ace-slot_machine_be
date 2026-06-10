@@ -1,42 +1,15 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://miro.medium.com/v2/resize:fit:4800/format:webp/1*9fWIkINvrOfiQwQsmg9UJQ.png" width="800" alt="Nest Logo" /></a>
-</p>
+## Running with Docker
 
+### Build
 
-## Description
-
-### LucidOrm + Mysql
-
-## Installation and Running Migration
-
-```bash
-$ TODO //
+```sh
+docker build -t promotion-ace-slot-machine-be .
 ```
 
-## Running the app
+### Run
 
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
+```sh
+docker run -p 3001:3001 --env-file .env promotion-ace-slot-machine-be
 ```
 
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+This will automatically run migrations on startup and then start the server.
