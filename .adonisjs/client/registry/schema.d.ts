@@ -103,16 +103,16 @@ export interface Registry {
       errorResponse: ExtractErrorResponse<Awaited<ReturnType<import('#controllers/sample_controller').default['balance']>>>
     }
   }
-  'sample.ping': {
+  'sample.get_ongoing_event': {
     methods: ["GET","HEAD"]
-    pattern: '/api/sample/ping'
+    pattern: '/api/sample/ongoing-event'
     types: {
       body: {}
       paramsTuple: []
       params: {}
       query: {}
-      response: ExtractResponse<Awaited<ReturnType<import('#controllers/sample_controller').default['ping']>>>
-      errorResponse: ExtractErrorResponse<Awaited<ReturnType<import('#controllers/sample_controller').default['ping']>>>
+      response: ExtractResponse<Awaited<ReturnType<import('#controllers/sample_controller').default['getOngoingEvent']>>>
+      errorResponse: ExtractErrorResponse<Awaited<ReturnType<import('#controllers/sample_controller').default['getOngoingEvent']>>>
     }
   }
 }

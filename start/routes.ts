@@ -41,4 +41,4 @@ router.get('/api/minigame', [controllers.SlotMachine, 'minigame'])
 router.post('/api/config/jackpot', [controllers.SlotMachine, 'configJackpot'])
 
 router.get('/api/sample/balance', [controllers.Sample, 'balance'])
-router.get('/api/sample/ping', [controllers.Sample, 'ping'])
+router.get('/api/sample/ongoing-event', [controllers.Sample, 'getOngoingEvent'])

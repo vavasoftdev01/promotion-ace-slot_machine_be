@@ -1,6 +1,7 @@
 import logger from '@adonisjs/core/services/logger'
 import type { HttpContext } from '@adonisjs/core/http'
 import RedisService from '#services/redis_service'
+import EventConfiguration from '#models/event_configuration'
 
 export default class SampleController {
   async balance({ request }: HttpContext) {
@@ -21,5 +22,12 @@ export default class SampleController {
     const user = { success: response.success, ...response.data.data, token }
     logger.info(`User authenticated: ${JSON.stringify(user)}`)
     return user
+  }
+
+  async getOngoingEvent({ request }: HttpContext) {
+    
+    const e_ = await EventConfiguration.all()
+
+    return e_
   }
 }

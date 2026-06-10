@@ -32,6 +32,54 @@ export class AuthAccessTokenSchema extends BaseModel {
   declare updatedAt: DateTime | null
 }
 
+export class EventsConfigurationSchema extends BaseModel {
+  static $columns = ['createdAt', 'eventDescription', 'eventEndTime', 'eventName', 'eventStartTime', 'id', 'isActive', 'jackpotCombinations', 'prizeDetails', 'updatedAt'] as const
+  $columns = EventsConfigurationSchema.$columns
+  @column.dateTime({ autoCreate: true })
+  declare createdAt: DateTime | null
+  @column()
+  declare eventDescription: string
+  @column.dateTime()
+  declare eventEndTime: DateTime
+  @column()
+  declare eventName: string
+  @column.dateTime()
+  declare eventStartTime: DateTime
+  @column({ isPrimary: true })
+  declare id: number
+  @column()
+  declare isActive: boolean | null
+  @column()
+  declare jackpotCombinations: string
+  @column()
+  declare prizeDetails: string
+  @column.dateTime({ autoCreate: true, autoUpdate: true })
+  declare updatedAt: DateTime | null
+}
+
+export class UserbetSchema extends BaseModel {
+  static $columns = ['betAmount', 'betCombinationResult', 'createdAt', 'eventId', 'id', 'isJackpot', 'isWinner', 'updatedAt', 'userId'] as const
+  $columns = UserbetSchema.$columns
+  @column()
+  declare betAmount: number | null
+  @column()
+  declare betCombinationResult: string
+  @column.dateTime({ autoCreate: true })
+  declare createdAt: DateTime | null
+  @column()
+  declare eventId: number
+  @column({ isPrimary: true })
+  declare id: number
+  @column()
+  declare isJackpot: boolean | null
+  @column()
+  declare isWinner: boolean | null
+  @column.dateTime({ autoCreate: true, autoUpdate: true })
+  declare updatedAt: DateTime | null
+  @column()
+  declare userId: string
+}
+
 export class UserSchema extends BaseModel {
   static $columns = ['createdAt', 'email', 'fullName', 'id', 'password', 'updatedAt'] as const
   $columns = UserSchema.$columns

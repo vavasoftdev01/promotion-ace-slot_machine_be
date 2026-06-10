@@ -12,21 +12,21 @@ export type ScannedRoutes = {
     'slot_machine.minigame': { paramsTuple?: []; params?: {} }
     'slot_machine.config_jackpot': { paramsTuple?: []; params?: {} }
     'sample.balance': { paramsTuple?: []; params?: {} }
-    'sample.ping': { paramsTuple?: []; params?: {} }
+    'sample.get_ongoing_event': { paramsTuple?: []; params?: {} }
   }
   GET: {
     'profile.profile.show': { paramsTuple?: []; params?: {} }
     'slot_machine.spin': { paramsTuple?: []; params?: {} }
     'slot_machine.minigame': { paramsTuple?: []; params?: {} }
     'sample.balance': { paramsTuple?: []; params?: {} }
-    'sample.ping': { paramsTuple?: []; params?: {} }
+    'sample.get_ongoing_event': { paramsTuple?: []; params?: {} }
   }
   HEAD: {
     'profile.profile.show': { paramsTuple?: []; params?: {} }
     'slot_machine.spin': { paramsTuple?: []; params?: {} }
     'slot_machine.minigame': { paramsTuple?: []; params?: {} }
     'sample.balance': { paramsTuple?: []; params?: {} }
-    'sample.ping': { paramsTuple?: []; params?: {} }
+    'sample.get_ongoing_event': { paramsTuple?: []; params?: {} }
   }
   POST: {
     'auth.new_account.store': { paramsTuple?: []; params?: {} }

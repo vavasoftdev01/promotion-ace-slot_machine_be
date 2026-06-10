@@ -25,6 +25,6 @@ export interface ApiDefinition {
   }
   sample: {
     balance: typeof routes['sample.balance']
-    ping: typeof routes['sample.ping']
+    getOngoingEvent: typeof routes['sample.get_ongoing_event']
   }
 }

@@ -54,11 +54,11 @@ const routes = {
     tokens: [{"old":"/api/sample/balance","type":0,"val":"api","end":""},{"old":"/api/sample/balance","type":0,"val":"sample","end":""},{"old":"/api/sample/balance","type":0,"val":"balance","end":""}],
     types: placeholder as Registry['sample.balance']['types'],
   },
-  'sample.ping': {
+  'sample.get_ongoing_event': {
     methods: ["GET","HEAD"],
-    pattern: '/api/sample/ping',
-    tokens: [{"old":"/api/sample/ping","type":0,"val":"api","end":""},{"old":"/api/sample/ping","type":0,"val":"sample","end":""},{"old":"/api/sample/ping","type":0,"val":"ping","end":""}],
-    types: placeholder as Registry['sample.ping']['types'],
+    pattern: '/api/sample/ongoing-event',
+    tokens: [{"old":"/api/sample/ongoing-event","type":0,"val":"api","end":""},{"old":"/api/sample/ongoing-event","type":0,"val":"sample","end":""},{"old":"/api/sample/ongoing-event","type":0,"val":"ongoing-event","end":""}],
+    types: placeholder as Registry['sample.get_ongoing_event']['types'],
   },
 } as const satisfies Record<string, AdonisEndpoint>
 
